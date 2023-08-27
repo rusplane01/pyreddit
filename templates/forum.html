@@ -1,0 +1,14 @@
+<h2>
+        категория: {{object.name}}
+    </h2>
+    {% for post in posts %}
+        <div class="card" style="width: 18rem;">
+                <img src="{{post.image.url}}" class="card-img-top" alt="{{post.image}}"> 
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.content}}</p>
+                <a href="#" class="btn btn-primary">читать</a>
+            </div>
+        </div>
+    {% endfor %}
+    <p></p>

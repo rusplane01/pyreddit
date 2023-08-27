@@ -1,11 +1,12 @@
 from django.urls import path, include
-from .views import index, page0, CategoryView
+from .views import index, page0, page1, ForumView
 
 
 urlpatterns = [
-    path('',index),
-    path('page1/', CategoryView.as_view()),
-    path('page0/', page0),
+    path('',index, name = 'index'),
+    path('page1/', page1, name = 'page1'),
+    path('page0/', page0, name = 'page0'), 
+    path('<pk>/forum/', ForumView.as_view(), name='forum'),
     
 
 ]
