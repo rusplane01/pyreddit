@@ -1,14 +1,21 @@
-<h2>
-        категория: {{object.name}}
+{%extends 'skeleton.html'%}
+{%load static%}
+{%block ad%}
+
+    <h2>
+        категория: {{category.name}}
     </h2>
-    {% for post in posts %}
+    {% for objects in object %}
         <div class="card" style="width: 18rem;">
-                <img src="{{post.image.url}}" class="card-img-top" alt="{{post.image}}"> 
+                <img src="{{object.image.url}}" class="card-img-top" alt="{{object.image}}"> 
             <div class="card-body">
-                <h5 class="card-title">{{post.title}}</h5>
-                <p class="card-text">{{post.content}}</p>
-                <a href="#" class="btn btn-primary">читать</a>
+                <h5 class="card-title">{{object.title}}</h5>
+                <p class="card-text">{{object.description}}</p>
+                <p class="card-text">{{object.price}}</p>
+
             </div>
         </div>
     {% endfor %}
-    <p></p>
+
+
+{%endblock%}
